@@ -1,0 +1,48 @@
+{
+  "name": "@estebanborai/cars-parts-services-api",
+  "version": "0.1.0",
+  "description": "Cars Parts Services API Client",
+  "main": "dist/index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "rm -rf ./dist && rollup -c",
+    "test": "jest --env=node ./test/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estebanborai/cars-parts-services-api.git"
+  },
+  "keywords": [
+    "bovsoft",
+    "tecdoc",
+    "api",
+    "client"
+  ],
+  "author": "Esteban Borai <estebanborai@gmail.com>",
+  "license": "NO LICENSE",
+  "bugs": {
+    "url": "https://github.com/estebanborai/bovsoft-api/issues"
+  },
+  "homepage": "https://github.com/estebanborai/bovsoft-api#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/jest": "^25.2.3",
+    "@types/node": "^14.0.9",
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/parser": "^3.1.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.1.0",
+    "jest": "^26.0.1",
+    "rollup": "^2.12.0",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "ts-jest": "^26.1.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.3"
+  }
+}

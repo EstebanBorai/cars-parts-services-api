@@ -1,0 +1,834 @@
+{
+	"info": {
+		"_postman_id": "db841ed2-a527-4ca2-b178-2fdde0693867",
+		"name": "Bovsoft | Tecdoc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetListYears",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/GetListYears?format=json&lang=es&email={{email}}&seccode={{seccode}}",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"GetListYears"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "lang",
+							"value": "es"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAdditionalInfoAplicability",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/GetListYears?format=json&lang=es&email={{email}}&seccode={{seccode}}",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"GetListYears"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "lang",
+							"value": "es"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAdditionalInfoArticle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/getAdditionalInfoArticle?format=json&artid=1453322&lang=de&format=json&email={{email}}&seccode={{seccode}}",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"getAdditionalInfoArticle"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "artid",
+							"value": "1453322"
+						},
+						{
+							"key": "lang",
+							"value": "de"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetArticlesForKBA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/GetArticlesForKBA?format=json&kba=0005124&lang=de&format=json&email={{email}}&seccode={{seccode}}",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"GetArticlesForKBA"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "kba",
+							"value": "0005124"
+						},
+						{
+							"key": "lang",
+							"value": "de"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetArticlesForMime",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/GetArticlesForMime?format=json&mime=MBM5512CK851&lang=de&format=json&email={{email}}&seccode={{seccode}}",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"GetArticlesForMime"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "mime",
+							"value": "MBM5512CK851"
+						},
+						{
+							"key": "lang",
+							"value": "de"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetArticlesForType",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/GetArticlesForType?format=json&typid=9045&lang=de&format=json&email={{email}}&seccode={{seccode}}",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"GetArticlesForType"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "typid",
+							"value": "9045"
+						},
+						{
+							"key": "lang",
+							"value": "de"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetArtidByReference",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/GetArtidByReference?format=json&braid=101&search=02354&brand=FEBI%20BILSTEIN&lang=de&format=json&email={{email}}&seccode={{seccode}}",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"GetArtidByReference"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "braid",
+							"value": "101"
+						},
+						{
+							"key": "search",
+							"value": "02354"
+						},
+						{
+							"key": "brand",
+							"value": "FEBI%20BILSTEIN"
+						},
+						{
+							"key": "lang",
+							"value": "de"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBrands",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/GetBrands?format=json&lang=de&format=json&email={{email}}&seccode={{seccode}}",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"GetBrands"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "lang",
+							"value": "de"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCriteriesAplicabilityOfArticle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/GetCriteriesAplicabilityOfArticle?format=json&lang=de&format=json&email={{email}}&seccode={{seccode}}&laid=4",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"GetCriteriesAplicabilityOfArticle"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "lang",
+							"value": "de"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						},
+						{
+							"key": "laid",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCriteriesOfArticle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/getCriteriesOfArticle?format=json&artid=4&lang=de&format=json&email={{email}}&seccode={{seccode}}",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"getCriteriesOfArticle"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "artid",
+							"value": "4"
+						},
+						{
+							"key": "lang",
+							"value": "de"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCrossReferencesForArticle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/GetCrossReferencesForArticle?format=json&artid=1498871&lang=de&format=json&email={{email}}&seccode={{seccode}}",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"GetCrossReferencesForArticle"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "artid",
+							"value": "1498871"
+						},
+						{
+							"key": "lang",
+							"value": "de"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetImageForArticle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/getImageForArticle?format=json&artid=1000002&lang=de&format=json&email={{email}}&seccode={{seccode}}",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"getImageForArticle"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "artid",
+							"value": "1000002"
+						},
+						{
+							"key": "lang",
+							"value": "de"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetInfoArticle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/GetInfoArticle?format=json&artid=1000002&lang=de&format=json&email={{email}}&seccode={{seccode}}",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"GetInfoArticle"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "artid",
+							"value": "1000002"
+						},
+						{
+							"key": "lang",
+							"value": "de"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetInfoCar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/getInfoCar?format=json&typid=9045&lang=de&format=json&email={{email}}&seccode={{seccode}}",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"getInfoCar"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "typid",
+							"value": "9045"
+						},
+						{
+							"key": "lang",
+							"value": "de"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetInfoEngine",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/GetInfoEngine?format=json&engid=28374&lang=de&format=json&email={{email}}&seccode={{seccode}}",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"GetInfoEngine"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "engid",
+							"value": "28374"
+						},
+						{
+							"key": "lang",
+							"value": "de"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetManufacturers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/GetManufacturers?format=json&lang=es&email={{email}}&seccode={{seccode}}&year=2007",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"GetManufacturers"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "lang",
+							"value": "es"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						},
+						{
+							"key": "year",
+							"value": "2007"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetModels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/GetModels?format=json&lang=es&email={{email}}&seccode={{seccode}}&year=2007&mfaid=525",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"GetModels"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "lang",
+							"value": "es"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						},
+						{
+							"key": "year",
+							"value": "2007",
+							"description": "Models Year"
+						},
+						{
+							"key": "mfaid",
+							"value": "525",
+							"description": "Manufacturer ID"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTypes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://webservice.bovsoft.com:100/GetListYears?format=json&lang=es&email={{email}}&seccode={{seccode}}",
+					"protocol": "http",
+					"host": [
+						"webservice",
+						"bovsoft",
+						"com"
+					],
+					"port": "100",
+					"path": [
+						"GetListYears"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "lang",
+							"value": "es"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "seccode",
+							"value": "{{seccode}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

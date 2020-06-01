@@ -1,0 +1,1821 @@
+- about service http://cars-parts-services.com/services-api-integration/57-web-service-rest-api-mysql-to-jsonxmlcsvtxt.html
+- about program-server http://cars-parts-services.com/ready-data-for-use-softwares-images-csvxlsxml-tables-database/56-mysql-http-bridge-rest-api-server.html
+- about WebCatalog (program for test functions server) http://cars-parts-services.com/ready-data-for-use-softwares-images-csvxlsxml-tables-database/58-web-service-catalog-parts.html
+
+LIST STANDARD FUNCTIONS WHICH INCLUDED IN MONTHLY PAYMENT
+--------------------------------------------
+[getAdditionalInfoAplicability] -  get additional info for terms of use product for set car
+[getAdditionalInfoArticle] -  get additional info for product
+[GetArticlesForKBA] - get list products that using for cars according set KBA number (for Germany)
+[GetArticlesForMime] -  get list products that using for cars according set MIME number (for France)
+[GetArticlesForType] -  get list products  that using for cars according set k-type|typ_id number 
+[GetArtidByReference] -  get art_id for searching reference number with/without name brand/id_supplier
+[GetBrands] -  get list brands for OE and OEM products
+[GetCriteriesAplicabilityOfArticle] -  get list criteries aplicability (terms of use) product for car
+[getCriteriesOfArticle] -  get list criteries for product
+[GetCrossReferencesForArticle] -  get list cross reference data for set article
+[getImageForArticle] -  get directly url link for image(s)
+[GetInfoArticle] -  get main data for article
+[getInfoCar] -  get main data for car
+[GetInfoEngine] -  get main data for engine
+[getLanguages] -  get list langauges
+[GetListArticlesFromTradeGroup] -  get list articles for selected category the trade group
+[GetListArticlesFromTreeCategory] -  get list articles for selected category the tree categories
+[getListEnginesForCar] -  get list engines for set car
+[GetListReplacedNumbersArticle] -  get list replaced numbers of products
+[GetListTradeGroupsForCar] -  get list trade groups fro set car
+[getManufacturers] -  get list manufacturers of cars
+[getModels] - get list models 
+[GetPriceFromSupplier] -  get price(s) product that proposed from supplier
+[getSearchArticleByNameForCar] -  get list products according necessary name product(s) for set car
+[getSearchByCrossref] - get list cross reference numbers for search word (trade number product) 
+[GetSearchByCrossrefAndBrand] -  get list cross reference numbers according set search word (trade number product) and brand
+[GetSearchCarByname] -  get list vehicles according search by name type car
+[GetSearchEngineByCode] -  get list engines according search word fro code engine(s)
+[getSearchKBA] -  get list cars for set KBA number (for German)
+[getSearchMIME] -  get list cars for set KBA number (for German)
+[GetSpecificationArticle] -  get list specification for kit products
+[GetSuppliers] -  get list suppliers
+[GetTreeCategories] -  get tree categories for set car
+[getTypes] -  get list types cars
+[GetTypesForArticle] -  get list types of cars for which using set product
+--------------------------------------------
+WE OFFER THE SERVICE OF USING PERSONAL QUERIES WHERE THE DATA WILL CORRESPOND TO YOUR NEEDS 
+IN THE REQUIRED STRUCTURE AND DATA FORMAT. THE PRICE IS FROM $ 10 TO $ 100 AND DEPENDS 
+FROM THE NECESSARY STRUCTURE OF THE TABLES. SUBMIT REQUEST http://cars-parts-services.com/contact-us
+	
+
+	**************** DESCRIPTION FUNCTIONS FOR POSSIBLE CREATE CATALOG ******************
+
+	1. Selecting necessary car [getManufacturers] => [getModels] => [getTypes]. Or do search via KBA [getSearchKBA], MIME [getSearchMIME], by name car [GetSearchCarByname]. Show info about selected car [getInfoCar], [GetInfoEngine]
+	2. According selected car do creating tree categories [GetTreeCategories] or table trade group [GetListTradeGroupsForCar] or directly via [GetArticlesForType]
+	3. Creating list products according selected car and  necessary category from tree categories [GetListArticlesFromTreeCategory] OR from trade groups [GetListArticlesFromTradeGroup]
+	4. Show info about product : criteries [getCriteriesOfArticle], aplicability [GetTypesForArticle], Additional Info Aplicability [getAdditionalInfoAplicability], additional info [getAdditionalInfoArticle] ,ross-reference numbers [GetCrossReferencesForArticle], terms of use [GetCriteriesAplicabilityOfArticle], additional info, specification [GetSpecificationArticle]
+
+	*************************************************************************************
+
+
+
+----------------- [getAdditionalInfoAplicability] -----------------
+getAdditionalInfoAplicability
+
+Function for view additional info terms of use product for vehicle
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[laid] - value id description/criteries terms of use product for car (for use in function "GetCriteriesAplicabilityOfArticle")
+------
+output fields :
+[infotext] - text
+------
+samples :
+http://webservice.bovsoft.com:100/getAdditionalInfoAplicability?laid=1453322&format=json&lang=de
+http://webservice.bovsoft.com:100/getAdditionalInfoAplicability?laid=1453322&format=xml&lang=de
+http://webservice.bovsoft.com:100/getAdditionalInfoAplicability?laid=1453322&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/getAdditionalInfoAplicability?laid=1453322&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/getAdditionalInfoAplicability?laid=1453322&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/getAdditionalInfoAplicability?laid=1453322
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [getAdditionalInfoArticle] -----------------
+getAdditionalInfoArticle
+
+Function for view additional info for product
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[artid] - id product (art_id)
+------
+output fields :
+[infotext] - text
+------
+samples :
+http://webservice.bovsoft.com:100/getAdditionalInfoArticle?artid=1453322&format=json&lang=de
+http://webservice.bovsoft.com:100/getAdditionalInfoArticle?artid=1453322&format=xml&lang=de
+http://webservice.bovsoft.com:100/getAdditionalInfoArticle?artid=1453322&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/getAdditionalInfoArticle?artid=1453322&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/getAdditionalInfoArticle?artid=1453322&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/getAdditionalInfoArticle?artid=1453322
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetArticlesForKBA] -----------------
+GetArticlesForKBA
+
+Function for Germany country for view list products that using for found car (which use set KBA number)
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client
+[seccode] - value security code for registered client
+[kba] - KBA value for search
+------
+output fields :
+[typid] - value id car (typ_id / k-type)
+[artid] - value id product (art_id)
+[laid] - value id description/criteries terms of use product for car (for use in function "GetCriteriesAplicabilityOfArticle")
+------
+samples :
+http://webservice.bovsoft.com:100/GetArticlesForKBA?kba=0005124&format=XML
+http://webservice.bovsoft.com:100/GetArticlesForKBA?kba=0005124&format=json
+http://webservice.bovsoft.com:100/GetArticlesForKBA?kba=0005124&format=csv[;]
+http://webservice.bovsoft.com:100/GetArticlesForKBA?kba=0005124&format=csv[,]
+http://webservice.bovsoft.com:100/GetArticlesForKBA?kba=0005124&format=txt[tab]
+http://webservice.bovsoft.com:100/GetArticlesForKBA?kba=0005124
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetArticlesForMime] -----------------
+GetArticlesForMime
+
+Function for France country for view list products that using for found car (which use set Mime number)
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client
+[seccode] - value security code for registered client
+[mime] - mime value for search
+------
+output fields :
+[typid] - value id car (typ_id / k-type)
+[artid] - value id product (art_id)
+[laid] - value id description/criteries terms of use product for car (for use in function "GetCriteriesAplicabilityOfArticle")
+------
+samples :
+http://webservice.bovsoft.com:100/GetArticlesForMime?mime=MBM5512CK851&format=XML
+http://webservice.bovsoft.com:100/GetArticlesForMime?mime=MBM5512CK851&format=JSON
+http://webservice.bovsoft.com:100/GetArticlesForMime?mime=MBM5512CK851&format=CSV[;]
+http://webservice.bovsoft.com:100/GetArticlesForMime?mime=MBM5512CK851&format=CSV[,]
+http://webservice.bovsoft.com:100/GetArticlesForMime?mime=MBM5512CK851&format=txt[tab]
+http://webservice.bovsoft.com:100/GetArticlesForMime?mime=MBM5512CK851
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetArticlesForType] -----------------
+GetArticlesForType
+
+Function for view list all products that use for found car with necessary k-type number (id car/typ_id)
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[typid] - k-type value (id car/typ_id)  (value is mandatory)
+------
+output fields :
+[typid] - value id car (typ_id / k-type)
+[artid] - value id product (art_id)
+[laid] - value id description/criteries terms of use product for car (for use in function "GetCriteriesAplicabilityOfArticle")
+------
+samples :
+http://webservice.bovsoft.com:100/GetArticlesForType?typid=9045&format=xml
+http://webservice.bovsoft.com:100/GetArticlesForType?typid=9045&format=json
+http://webservice.bovsoft.com:100/GetArticlesForType?typid=9045&format=csv[;]
+http://webservice.bovsoft.com:100/GetArticlesForType?typid=9045&format=csv[,]
+http://webservice.bovsoft.com:100/GetArticlesForType?typid=9045&format=txt[tab]
+http://webservice.bovsoft.com:100/GetArticlesForType?typid=9045
+=======================
+
+
+--------------------------------------------------
+
+
+
+----------------- [GetArtidByReference] -----------------
+GetArtidByReference
+
+Function for get art_id for searching reference number with/without name brand/id_supplier
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[search] - search cross reference number
+[braid] OR [brand] - id brand OR name brand (can use any one from those), or miss any from those values
+------
+output fields :
+[artid] - id product (art_id)
+[braid] - id brand
+[brand] - name brand
+[searchnr] - number product
+[name] - name product
+------
+samples :
+http://webservice.bovsoft.com:100/GetArtidByReference?braid=101&search=02354&format=json&lang=de
+http://webservice.bovsoft.com:100/GetArtidByReference?brand=FEBI%20BILSTEIN&search=02354&format=json&lang=de
+http://webservice.bovsoft.com:100/GetArtidByReference?braid=101&search=02354&format=xml&lang=de
+http://webservice.bovsoft.com:100/GetArtidByReference?brand=FEBI%20BILSTEIN&search=02354&format=xml&lang=de
+http://webservice.bovsoft.com:100/GetArtidByReference?braid=101&search=02354&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/GetArtidByReference?brand=FEBI%20BILSTEIN&search=02354&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/GetArtidByReference?braid=101&search=02354&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/GetArtidByReference?brand=FEBI%20BILSTEIN&search=02354&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/GetArtidByReference?braid=101&search=02354&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/GetArtidByReference?brand=FEBI%20BILSTEIN&search=02354&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/GetArtidByReference?braid=101&search=02354
+http://webservice.bovsoft.com:100/GetArtidByReference?brand=FEBI%20BILSTEIN&search=02354
+=======================
+
+
+--------------------------------------------------
+
+
+
+----------------- [GetBrands] -----------------
+GetBrands
+
+Function for view list brands that are in own database (included OE, OEM brands)
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+------
+output fields :
+[braid] - id brand
+[mfccode] - short name brand (not using in other functions)
+[brand] - name brand
+[mfnr] - additional id brand (not using in other functions)
+------
+samples :
+http://webservice.bovsoft.com:100/GetBrands?format=xml
+http://webservice.bovsoft.com:100/GetBrands?format=json
+http://webservice.bovsoft.com:100/GetBrands?format=csv[;]
+http://webservice.bovsoft.com:100/GetBrands?format=csv[,]
+http://webservice.bovsoft.com:100/GetBrands?format=txt[tab]
+http://webservice.bovsoft.com:100/GetBrands
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetCriteriesAplicabilityOfArticle] -----------------
+GetCriteriesAplicabilityOfArticle
+
+Function for view criteries for term of use product for car
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[laid] - value id description/criteries terms of use product for car
+------
+output fields :
+[criteria_text] - name critery
+[criteria_value] - value critery
+------
+samples :
+http://webservice.bovsoft.com:100/GetCriteriesAplicabilityOfArticle?laid=4&format=xml&lang=de
+http://webservice.bovsoft.com:100/GetCriteriesAplicabilityOfArticle?laid=4&format=json&lang=de
+http://webservice.bovsoft.com:100/GetCriteriesAplicabilityOfArticle?laid=4&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/GetCriteriesAplicabilityOfArticle?laid=4&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/GetCriteriesAplicabilityOfArticle?laid=4&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/GetCriteriesAplicabilityOfArticle?laid=4
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [getCriteriesOfArticle] -----------------
+getCriteriesOfArticle
+
+Function for view main criteries for product (in case if need terms of use then need use function "GetCriteriesAplicabilityOfArticle")
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[artid] - value id product (art_id)
+------
+output fields :
+[criteria_text] - name critery
+[criteria_value] - value critery
+------
+samples :
+http://webservice.bovsoft.com:100/getCriteriesOfArticle?artid=4&format=xml&lang=de
+http://webservice.bovsoft.com:100/getCriteriesOfArticle?artid=4&format=json&lang=de
+http://webservice.bovsoft.com:100/getCriteriesOfArticle?artid=4&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/getCriteriesOfArticle?artid=4&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/getCriteriesOfArticle?artid=4&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/getCriteriesOfArticle?artid=4
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetCrossReferencesForArticle] -----------------
+GetCrossReferencesForArticle
+
+Function for view list cross reference numbers for set product
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[artid] - value id product (art_id)
+------
+output fields :
+[braid] - id brand
+[brand] - name brand
+[searchnr] - short the number product (modified nyumber where are cleaned from additional symbols, are left only symbols 0..9, a..z, A..Z)
+[displaynr] - trade number manufacturer (or number which set supplier)
+[name] - name product
+[kind] - type number:
+	1 - product for which is search
+	2 - trade number (user number)
+	3 - original (structural) number
+	4 - after market analogue
+	5 - bar-code (number EAN)
+------
+samples :
+http://webservice.bovsoft.com:100/GetCrossReferencesForArticle?artid=1498871&format=xml&lang=de
+http://webservice.bovsoft.com:100/GetCrossReferencesForArticle?artid=1498871&format=json&lang=de
+http://webservice.bovsoft.com:100/GetCrossReferencesForArticle?artid=1498871&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/GetCrossReferencesForArticle?artid=1498871&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/GetCrossReferencesForArticle?artid=1498871&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/GetCrossReferencesForArticle?artid=1498871
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [getImageForArticle] -----------------
+getImageForArticle
+
+FUNCTIONS IS YET NOT READY, AT MOMENT IS UPLOADING IMAGES
+
+Function for get path to image(s)
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[artid] - value id product (art_id)
+------
+output fields :
+[braid] - directly path to image
+------
+samples :
+http://webservice.bovsoft.com:100/getImageForArticle?artid=1000002&format=xml
+http://webservice.bovsoft.com:100/getImageForArticle?artid=1000002&format=json
+http://webservice.bovsoft.com:100/getImageForArticle?artid=1000002&format=csv[;]
+http://webservice.bovsoft.com:100/getImageForArticle?artid=1000002&format=csv[,]
+http://webservice.bovsoft.com:100/getImageForArticle?artid=1000002&format=txt[tab]
+http://webservice.bovsoft.com:100/getImageForArticle?artid=1000002
+=====================
+
+
+--------------------------------------------------
+
+
+----------------- [GetInfoArticle] -----------------
+GetInfoArticle
+
+Function for view main data of product
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[artid] - value id product (art_id)
+------
+output fields :
+[artid] - id product
+[braid] - id brand
+[brand] - name brand
+[articlenr] - trade number product
+[name] - name product
+[additionalforname] - additional info to name product
+[statusproduct] - status product
+------
+samples :
+http://webservice.bovsoft.com:100/GetInfoArticle?artid=1000002&format=xml&lang=de
+http://webservice.bovsoft.com:100/GetInfoArticle?artid=1000002&format=json&lang=de
+http://webservice.bovsoft.com:100/GetInfoArticle?artid=1000002&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/GetInfoArticle?artid=1000002&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/GetInfoArticle?artid=1000002&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/GetInfoArticle?artid=1000002
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [getInfoCar] -----------------
+getInfoCar
+
+Function for view main data of product
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[typid] - value id car (typ_id/k-type number)
+------
+output fields :
+[mfaid] - id manufacturer / id brand
+[modid] - id model
+[typid] - if type of car
+[brand] - name manufacturer / name brand
+[modelcar] - name model
+[typecar] - name type of car
+[pconstart] - start year release
+[pconend] - end year release
+[bodytype] - body type
+[kw] - kw
+[hp] - HP
+[ccm] - CCM
+[cylinders] - count cylinders
+[doors] - count doors
+[tank] - type tank
+[voltage] - voltage
+[typeabs] - type abs
+[typeasr] - type asr
+[typeengine] - type engine
+[listcodeengine] - list engine codes (separate symbol ","). More info about engine you can get with help functions "getListEnginesForCar" and "GetInfoEngine"
+[braketype] - type brake
+[brakesystem] - system brake
+[typefuel] - type fuel
+[typecatalyst] - type catalyst
+[maxweight] - max weight (for trucks and commercial cars)
+[typeaxle] - type axle
+[ccmtax] - ccm
+[litres] - litres
+[valves] - count valves on one cylinder
+[typedrive] - type drive
+[typetrans] - type transmission
+[fuelsuply] - type fuel suply 
+------
+samples :
+http://webservice.bovsoft.com:100/getInfoCar?typid=9045&format=xml&lang=de
+http://webservice.bovsoft.com:100/getInfoCar?typid=9045&format=json&lang=de
+http://webservice.bovsoft.com:100/getInfoCar?typid=9045&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/getInfoCar?typid=9045&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/getInfoCar?typid=9045&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/getInfoCar?typid=9045
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetInfoEngine] -----------------
+GetInfoEngine
+
+Function for view info of engine
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[engid] - id engine (get list engine for necessary car can with help function "getListEnginesForCar")
+------
+output fields :
+[engid] - id engine
+[mfaid] - id manufacturer / id brand
+[code] - code engine
+[pconstart] - start year release
+[pconend] - end year release
+[kwfrom] - kw from
+[kwupto] - kw upto
+[hpfrom] - hp from
+[hpupto] - hp upto
+[valves] - sum valvers for engine
+[cylinders] - count cylinder
+[ccmfrom] - ccm from
+[ccmupto] - ccm upto
+[design] - design engine
+[fueltype] - fuel type
+[fuelsuply] - type fuel suply
+[description] - additional description
+[typeengine] - type engine
+[kwrpmfrom] - kw rpm from
+[kwrpmupto] - kw rpm upto
+[torquefrom] - torgue from
+[torqueupto] - torgue upto
+[torquerpmfrom] - torgue rpm from
+[torquerpmend] - torgue rpm upto
+[compressionfrom] - compression from
+[compressionupto] - compression upto
+[drilling] - drilling
+[extension] - extension
+[crankshaft] - crankshaft
+[chargetype] - type charge
+[gasnormtype] - gas type
+[cylinderstype] - type cylinders
+[control] - control
+[valvecontrol] - valve control
+[cooling] - type cooling
+------
+samples :
+http://webservice.bovsoft.com:100/GetInfoEngine?engid=28374&format=xml&lang=de
+http://webservice.bovsoft.com:100/GetInfoEngine?engid=28374&format=json&lang=de
+http://webservice.bovsoft.com:100/GetInfoEngine?engid=28374&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/GetInfoEngine?engid=28374&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/GetInfoEngine?engid=28374&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/GetInfoEngine?engid=28374
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [getLanguages] -----------------
+getLanguages
+
+Function for view list languages
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+------
+output fields :
+[lngid] - id language
+[name] - name language
+[lngiso2] - iso2 code to langauge
+------
+samples :
+http://webservice.bovsoft.com:100/getLanguages?format=xml&lang=de
+http://webservice.bovsoft.com:100/getLanguages?format=json&lang=de
+http://webservice.bovsoft.com:100/getLanguages?format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/getLanguages?format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/getLanguages?format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/getLanguages
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetListArticlesFromTradeGroup] -----------------
+GetListArticlesFromTradeGroup
+
+Function for view list products according selected trade group for necessary car
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[typid] - id car (typ_id/k-type number)
+[gaid] - id trade group (value can get from function "GetListTradeGroupsForCar")
+------
+output fields :
+[artid] - id product
+[laid] - value id description/criteries terms of use product for car (for use in function "GetCriteriesAplicabilityOfArticle")
+------
+samples :
+http://webservice.bovsoft.com:100/GetListArticlesFromTradeGroup?typid=9045&gaid=416&format=xml&lang=de
+http://webservice.bovsoft.com:100/GetListArticlesFromTradeGroup?typid=9045&gaid=416&format=json&lang=de
+http://webservice.bovsoft.com:100/GetListArticlesFromTradeGroup?typid=9045&gaid=416&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/GetListArticlesFromTradeGroup?typid=9045&gaid=416&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/GetListArticlesFromTradeGroup?typid=9045&gaid=416&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/GetListArticlesFromTradeGroup?typid=9045&gaid=416
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetListArticlesFromTreeCategory] -----------------
+GetListArticlesFromTreeCategory
+
+Function for view list products according selected category in tree categories for necessary car
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[typid] - id car (typ_id/k-type number)
+[strid] - id category in tree categories (value can get from function "GetTreeCategories")
+------
+output fields :
+[artid] - id product
+[laid] - value id description/criteries terms of use product for car (for use in function "GetCriteriesAplicabilityOfArticle")
+------
+samples :
+http://webservice.bovsoft.com:100/GetListArticlesFromTreeCategory?typid=9045&format=XML&strid=10511
+http://webservice.bovsoft.com:100/GetListArticlesFromTreeCategory?typid=9045&format=json&strid=10511
+http://webservice.bovsoft.com:100/GetListArticlesFromTreeCategory?typid=9045&format=csv[;]&strid=10511
+http://webservice.bovsoft.com:100/GetListArticlesFromTreeCategory?typid=9045&format=csv[,]&strid=10511
+http://webservice.bovsoft.com:100/GetListArticlesFromTreeCategory?typid=9045&format=txt[tab]&strid=10511
+http://webservice.bovsoft.com:100/GetListArticlesFromTreeCategory?typid=9045&strid=10511
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [getListEnginesForCar] -----------------
+getListEnginesForCar
+
+Function for view list engine(s) for necessary car
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[typid] - id car (typ_id/k-type number)
+------
+output fields :
+[engid] - id engine (more info about engine you can get with help function "GetInfoEngine")
+[code] - code engine 
+------
+samples :
+http://webservice.bovsoft.com:100/getListEnginesForCar?typid=9045&format=json
+http://webservice.bovsoft.com:100/getListEnginesForCar?typid=9045&format=xml
+http://webservice.bovsoft.com:100/getListEnginesForCar?typid=9045&format=csv[;]
+http://webservice.bovsoft.com:100/getListEnginesForCar?typid=9045&format=csv[,]
+http://webservice.bovsoft.com:100/getListEnginesForCar?typid=9045&format=txt[tab]
+http://webservice.bovsoft.com:100/getListEnginesForCar?typid=9045
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetListReplacedNumbersArticle] -----------------
+GetListReplacedNumbersArticle
+
+Function for view list code parts that was replaced on new numbers
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[artid] - value id product (art_id)
+------
+output fields :
+[braid] - id brand
+[brand] - name brand
+[articlenr] - active article number
+[oldarticlenr] - old article number
+------
+samples :
+http://webservice.bovsoft.com:100/GetListReplacedNumbersArticle?artid=3311&format=XML
+http://webservice.bovsoft.com:100/GetListReplacedNumbersArticle?artid=3311&format=json
+http://webservice.bovsoft.com:100/GetListReplacedNumbersArticle?artid=3311&format=csv[;]
+http://webservice.bovsoft.com:100/GetListReplacedNumbersArticle?artid=3311&format=csv[,]
+http://webservice.bovsoft.com:100/GetListReplacedNumbersArticle?artid=3311&format=txt[tab]
+http://webservice.bovsoft.com:100/GetListReplacedNumbersArticle?artid=3311
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetListTradeGroupsForCar] -----------------
+GetListTradeGroupsForCar
+
+Function for view list trade groups for necessary car
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[typid] - id car (typ_id/k-type number)
+------
+output fields :
+[typid] - id car (typ_id / k-type number)
+[gaid] - id trade group
+[ganame] - full name trade group
+[gastandard] - short the name trade group
+[gaassembly] - assembly part where use product
+[gaintended] - system for which is intended product
+------
+samples :
+http://webservice.bovsoft.com:100/GetListTradeGroupsForCar?typid=9045&format=XML&lang=de
+http://webservice.bovsoft.com:100/GetListTradeGroupsForCar?typid=9045&format=json&lang=de
+http://webservice.bovsoft.com:100/GetListTradeGroupsForCar?typid=9045&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/GetListTradeGroupsForCar?typid=9045&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/GetListTradeGroupsForCar?typid=9045&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/GetListTradeGroupsForCar?typid=9045
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [getManufacturers] -----------------
+getManufacturers
+
+Function for view list manufacturers of vehicles
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[only] - need type vehicle (value is not mandatory, by default all vehicles)
+		possible values :
+		1 - only passanger
+		2 - only truck
+		3 - motorcycles
+[year] - year release car (value is not mandatory, by default all years)
+------
+output fields :
+[mfaid] - id manufacturer / id brand
+[brand] - name brand
+[mfccode] - short name brand
+[mfnr] - additioonal id manufacturer (not using in other tables)
+[includedtype] - will view when will set value "only"
+------
+samples :
+http://webservice.bovsoft.com:100/getManufacturers?year=2006&only=1&format=XML
+http://webservice.bovsoft.com:100/getManufacturers?year=2006&only=1&format=json
+http://webservice.bovsoft.com:100/getManufacturers?year=2006&only=1&format=csv[;]
+http://webservice.bovsoft.com:100/getManufacturers?year=2006&only=1&format=csv[,]
+http://webservice.bovsoft.com:100/getManufacturers?year=2006&only=1&format=txt[tab]
+http://webservice.bovsoft.com:100/getManufacturers?year=2006&only=1
+http://webservice.bovsoft.com:100/getManufacturers?year=2006
+http://webservice.bovsoft.com:100/getManufacturers?only=1
+http://webservice.bovsoft.com:100/getManufacturers
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [getModels] -----------------
+getModels
+
+Function for view list manufacturers of vehicles
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[only] - need type vehicle (value is not mandatory, by default all vehicles)
+		possible values :
+		1 - only passanger
+		2 - only truck
+		3 - motorcycles
+[year] - year release car (value is not mandatory, by default all years)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[mfaid] - id manufacturer of vehicle / id brand of car (value is not mandatory, by default will all models)
+------
+output fields :
+[mfaid] - id manufacturer / id brand
+[modid] - id model
+[brand] - name brand
+[modelcar] - name model
+[pconstart] - start year release
+[pconend] - end year release
+[includedtype] - will view when will set value "only"
+------
+samples :
+http://webservice.bovsoft.com:100/getModels?mfaid=511&year=2016&only=1&format=XML&lang=de
+http://webservice.bovsoft.com:100/getModels?mfaid=511&year=2016&only=1&format=json&lang=de
+http://webservice.bovsoft.com:100/getModels?mfaid=511&year=2016&only=1&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/getModels?mfaid=511&year=2016&only=1&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/getModels?mfaid=511&year=2016&only=1&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/getModels?mfaid=511&year=2016&only=1
+http://webservice.bovsoft.com:100/getModels?mfaid=511&year=1990
+http://webservice.bovsoft.com:100/getModels?mfaid=511
+http://webservice.bovsoft.com:100/getModels
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetPriceFromSupplier] -----------------
+GetPriceFromSupplier
+
+Function for view price product that proposed from supplier (prices are not for all products)
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[artid] - id product (art_id)
+------
+output fields :
+[artid] - id product (art_id)
+[braid] - id brand
+[brand] - name brand
+[articlenr] - trade number product
+[name] - name product
+[price] - price
+[currencycode] - currency code
+------
+samples :
+http://webservice.bovsoft.com:100/GetPriceFromSupplier?artid=939&format=XML&lang=de
+http://webservice.bovsoft.com:100/GetPriceFromSupplier?artid=939&format=json&lang=de
+http://webservice.bovsoft.com:100/GetPriceFromSupplier?artid=939&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/GetPriceFromSupplier?artid=939&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/GetPriceFromSupplier?artid=939&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/GetPriceFromSupplier?artid=939
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [getSearchArticleByNameForCar] -----------------
+getSearchArticleByNameForCar
+
+Function for search by name product that use for necessary car
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[typid] - id car (typ_id / k-type number)
+[search] - search word(s) for necessary langauge (for example for English language "brake pad")
+------
+output fields :
+[artid] - id product (art_id)
+[braid] - id brand
+[brand] - name brand
+[articlenr] - trade number product
+[name] - name product
+[laid] - value id description/criteries terms of use product for car (for use in function "GetCriteriesAplicabilityOfArticle")
+------
+samples :
+http://webservice.bovsoft.com:100/getSearchArticleByNameForCar?typid=9045&search=water%20pump&format=json&lang=en
+http://webservice.bovsoft.com:100/getSearchArticleByNameForCar?typid=9045&search=water%20pump&format=xml&lang=en
+http://webservice.bovsoft.com:100/getSearchArticleByNameForCar?typid=9045&search=water%20pump&format=csv[;]&lang=en
+http://webservice.bovsoft.com:100/getSearchArticleByNameForCar?typid=9045&search=water%20pump&format=csv[,]&lang=en
+http://webservice.bovsoft.com:100/getSearchArticleByNameForCar?typid=9045&search=water%20pump&format=txt[tab]&lang=en
+http://webservice.bovsoft.com:100/getSearchArticleByNameForCar?typid=9045&search=water%20pump&lang=en
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [getSearchByCrossref] -----------------
+getSearchByCrossref
+
+Function for search list analogs [brand + code] part according set cross reference number
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[search] - search cross reference number
+------
+output fields :
+[artid] - id product (art_id)
+[braid] - id brand
+[brand] - name brand
+[searchnr] - short the number product (modified nyumber where are cleaned from additional symbols, are left only symbols 0..9, a..z, A..Z)
+[name] - name product
+------
+samples :
+http://webservice.bovsoft.com:100/getSearchByCrossref?search=02354&format=json&lang=en
+http://webservice.bovsoft.com:100/getSearchByCrossref?search=02354&format=xml&lang=en
+http://webservice.bovsoft.com:100/getSearchByCrossref?search=02354&format=csv[;]&lang=en
+http://webservice.bovsoft.com:100/getSearchByCrossref?search=02354&format=csv[,]&lang=en
+http://webservice.bovsoft.com:100/getSearchByCrossref?search=02354&format=txt[tab]&lang=en
+http://webservice.bovsoft.com:100/getSearchByCrossref?search=02354
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetSearchByCrossrefAndBrand] -----------------
+GetSearchByCrossrefAndBrand
+
+Function for search list analogs [brand + code] part according set cross reference number and brand
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[search] - search cross reference number
+[braid] OR [brand] - id brand OR name brand (can use any one from those)
+------
+output fields :
+[artid] - id product (art_id)
+[braid] - id brand
+[brand] - name brand
+[searchnr] - short the number product (modified nyumber where are cleaned from additional symbols, are left only symbols 0..9, a..z, A..Z)
+[name] - name product
+------
+samples :
+http://webservice.bovsoft.com:100/GetSearchByCrossrefAndBrand?braid=101&search=02354&format=json&lang=de
+http://webservice.bovsoft.com:100/GetSearchByCrossrefAndBrand?brand=FEBI%20BILSTEIN&search=02354&format=json&lang=de
+http://webservice.bovsoft.com:100/GetSearchByCrossrefAndBrand?braid=101&search=02354&format=xml&lang=de
+http://webservice.bovsoft.com:100/GetSearchByCrossrefAndBrand?brand=FEBI%20BILSTEIN&search=02354&format=xml&lang=de
+http://webservice.bovsoft.com:100/GetSearchByCrossrefAndBrand?braid=101&search=02354&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/GetSearchByCrossrefAndBrand?brand=FEBI%20BILSTEIN&search=02354&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/GetSearchByCrossrefAndBrand?braid=101&search=02354&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/GetSearchByCrossrefAndBrand?brand=FEBI%20BILSTEIN&search=02354&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/GetSearchByCrossrefAndBrand?braid=101&search=02354&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/GetSearchByCrossrefAndBrand?brand=FEBI%20BILSTEIN&search=02354&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/GetSearchByCrossrefAndBrand?braid=101&search=02354
+http://webservice.bovsoft.com:100/GetSearchByCrossrefAndBrand?brand=FEBI%20BILSTEIN&search=02354
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetSearchCarByname] -----------------
+GetSearchCarByname
+
+Function for search vehicles according by name vehicle
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[search] - search word (for example "bmw e39")
+[year] - year release car
+------
+output fields :
+[typid] - id car (typ_id / k-type number)
+[name] - name type car
+------
+samples :
+http://webservice.bovsoft.com:100/GetSearchCarByname?year=2000&search=bmw%20e39%20525&format=json&lang=de
+http://webservice.bovsoft.com:100/GetSearchCarByname?year=2000&search=bmw%20e39%20525&format=xml&lang=de
+http://webservice.bovsoft.com:100/GetSearchCarByname?year=2000&search=bmw%20e39%20525&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/GetSearchCarByname?year=2000&search=bmw%20e39%20525&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/GetSearchCarByname?year=2000&search=bmw%20e39%20525&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/GetSearchCarByname?year=2000&search=bmw%20e39%20525
+http://webservice.bovsoft.com:100/GetSearchCarByname?search=bmw%20e39%20525
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetSearchEngineByCode] -----------------
+GetSearchEngineByCode
+
+Function for search list engine(s) according set code engine
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[search] - search code engine
+------
+output fields :
+[engid] - id engine (more info about engine you can get with help function "GetInfoEngine")
+[code] - code engine
+------
+samples :
+http://webservice.bovsoft.com:100/GetSearchEngineByCode?search=108&format=json
+http://webservice.bovsoft.com:100/GetSearchEngineByCode?search=108&format=xml
+http://webservice.bovsoft.com:100/GetSearchEngineByCode?search=108&format=csv[;]
+http://webservice.bovsoft.com:100/GetSearchEngineByCode?search=108&format=csv[,]
+http://webservice.bovsoft.com:100/GetSearchEngineByCode?search=108&format=txt[tab]
+http://webservice.bovsoft.com:100/GetSearchEngineByCode?search=108
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [getSearchKBA] -----------------
+getSearchKBA
+
+Function for search car(s) according set KBA number
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[kba] - full KBA number
+------
+output fields :
+[typid] - id car (typ_id / k-type number)
+[kbanumber] - kba number
+------
+samples :
+http://webservice.bovsoft.com:100/getSearchKBA?kba=0005624&format=json
+http://webservice.bovsoft.com:100/getSearchKBA?kba=0005624&format=xml
+http://webservice.bovsoft.com:100/getSearchKBA?kba=0005624&format=csv[;]
+http://webservice.bovsoft.com:100/getSearchKBA?kba=0005624&format=csv[,]
+http://webservice.bovsoft.com:100/getSearchKBA?kba=0005624&format=txt[tab]
+http://webservice.bovsoft.com:100/getSearchKBA?kba=0005624 
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [getSearchMIME] -----------------
+getSearchMIME
+
+Function for search car(s) according set MIME number
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[mime] - full MIME number
+------
+output fields :
+[typid] - id car (typ_id / k-type number)
+[mimenumber] - MIME number
+------
+samples :
+http://webservice.bovsoft.com:100/getSearchMIME?mime=MBM5512CK851&format=json
+http://webservice.bovsoft.com:100/getSearchMIME?mime=MBM5512CK851&format=xml
+http://webservice.bovsoft.com:100/getSearchMIME?mime=MBM5512CK851&format=csv[;]
+http://webservice.bovsoft.com:100/getSearchMIME?mime=MBM5512CK851&format=csv[,]
+http://webservice.bovsoft.com:100/getSearchMIME?mime=MBM5512CK851&format=txt[tab]
+http://webservice.bovsoft.com:100/getSearchMIME?mime=MBM5512CK851
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetSpecificationArticle] -----------------
+GetSpecificationArticle
+
+Function for view of specification kit products in case if there are included set product OR this prodcut is as kit
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[artid] - id product (art_id)
+------
+output fields :
+[artid] - id product (art_id)
+[braid] - id brand
+[brand] - brand
+[displaynr] - trade number kit products 
+[name] - name kit products
+[artidcomponent] - id product component
+[displaynrcomponent] - trade number component
+[namecomponent]  - name component
+[qt] - quantity component in kit
+------
+samples :
+http://webservice.bovsoft.com:100/GetSpecificationArticle?ARTID=73807&format=json&lang=de
+http://webservice.bovsoft.com:100/GetSpecificationArticle?ARTID=73807&format=xml&lang=de
+http://webservice.bovsoft.com:100/GetSpecificationArticle?ARTID=73807&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/GetSpecificationArticle?ARTID=73807&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/GetSpecificationArticle?ARTID=73807&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/GetSpecificationArticle?ARTID=73807
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetSuppliers] -----------------
+GetSuppliers
+
+Function for view list suppliers
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+------
+output fields :
+[braid] - id brand
+[brand] - name brand
+[suppliernr] - additional id supplier
+------
+samples :
+http://webservice.bovsoft.com:100/GetSuppliers?format=json
+http://webservice.bovsoft.com:100/GetSuppliers?format=xml
+http://webservice.bovsoft.com:100/GetSuppliers?format=csv[;]
+http://webservice.bovsoft.com:100/GetSuppliers?format=csv[,]
+http://webservice.bovsoft.com:100/GetSuppliers?format=txt[tab]
+http://webservice.bovsoft.com:100/GetSuppliers
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetTreeCategories] -----------------
+GetTreeCategories
+
+Function for view tree categories for necessary car
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[typid] - id car (typ_id/k-type number)
+[strtype] - type of product group
+					1 - passenger cars
+					2 - truck cars
+					3 - engine
+					4 - universal
+					5 - axle
+	
+
+-----
+
+output fields :
+[level] - active level for tree
+[text1] - name category fro 1 level
+[id1] - id category fro 1 level
+[text2] - name category fro 2 level
+[id2] - id category fro 2 level
+[text3] - name category fro 3 level
+[id3] - id category fro 3 level
+[text4] - name category fro 4 level
+[id4] - id category fro 4 level
+[text5] - name category fro 5 level
+[id5] - id category fro 5 level
+
+
+
+------
+
+samples :
+
+http://webservice.bovsoft.com:100/GetTreeCategories?typid=9045&strtype=1&format=xml&lang=de
+http://webservice.bovsoft.com:100/GetTreeCategories?typid=9045&strtype=1&format=json&lang=de
+http://webservice.bovsoft.com:100/GetTreeCategories?typid=9045&strtype=1&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/GetTreeCategories?typid=9045&strtype=1&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/GetTreeCategories?typid=9045&strtype=1&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/GetTreeCategories?typid=9045&strtype=1
+
+=======================
+--------------------------------------------------
+
+
+----------------- [getTypes] -----------------
+getTypes
+
+Function for view list types of vehicles
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[only] - need type vehicle (value is not mandatory, by default all vehicles)
+		possible values :
+		1 - only passanger
+		2 - only truck
+		3 - motorcycles
+[year] - year release car (value is not mandatory, by default all years)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[modid] - id model
+------
+output fields :
+[mfaid] - id manufacturer / id brand
+[modid] - id model
+[typid] - id car (typ_id / k-type number)
+[brand] - name brand
+[modelcar] - name model car
+[shortnametypecar] - short then name car
+[fullnametypecar] - full name car
+[pconstart] - from year realesa
+[pconend] - to year realesa
+[bodytype] - body type
+[kw] - kw
+[hp] - hp
+[ccm] - ccm
+[typefuel] - fuel type
+[listcodeengine] - 	list codes engine(s)
+[includedtype] - will view when will set value "only"
+------
+samples :
+http://webservice.bovsoft.com:100/getTypes?modid=511&year=1995&format=json&lang=de
+http://webservice.bovsoft.com:100/getTypes?modid=511&year=1995&format=xml&lang=de
+http://webservice.bovsoft.com:100/getTypes?modid=511&year=1995&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/getTypes?modid=511&year=1995&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/getTypes?modid=511&year=1995&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/getTypes?modid=511&year=1995
+http://webservice.bovsoft.com:100/getTypes?modid=511
+=======================
+
+
+--------------------------------------------------
+
+
+----------------- [GetTypesForArticle] -----------------
+GetTypesForArticle
+
+Function for view list types of vehicles for which using set product
+------
+input parameters :
+[format] - select necessary output format data, are possible formats : JSON, XML, CSV[;], CSV[,], TXT[TAB] (value is not mandatory, is by default JSON)
+[email] - value email for registered client (value is not mandatory, by default will for demo client)
+[seccode] - value security code for registered client (value is not mandatory, by default will for demo client)
+[lang] - iso2 code language (value is not mandatory, by default will for english language "en"), possible values :		
+		Bulgarian	  =  	bg
+		Czech	  =  	cs
+		Danish	  =  	da
+		Dutch	  =  	nl
+		English	  =  	en
+		Estonian	  =  	et
+		Finnish	  =  	fi
+		French	  =  	fr
+		German	  =  	de
+		Greek	  =  	el
+		Hungarian	  =  	hu
+		Italian	  =  	it
+		Latvian	  =  	lv
+		Lithuanian	  =  	lt
+		Norwegian	  =  	no
+		Polish	  =  	pl
+		Portuguese	  =  	pt
+		Romanian	  =  	ro
+		Russian	  =  	ru
+		Serbian	  =  	sr
+		Slovak	  =  	sk
+		Slovenian	  =  	sl
+		Spanish	  =  	es
+		Swedish	  =  	sv
+		Turkish	  =  	tr
+[artid] - id product (art_id)
+------
+output fields :
+[mfaid] - id manufacturer / id brand
+[modid] - id model
+[typid] - id car (typ_id / k-type number)
+[brand] - name brand
+[modelcar] - name model car
+[shortnametypecar] - short then name car
+[fullnametypecar] - full name car
+[pconstart] - from year realesa
+[pconend] - to year realesa
+[bodytype] - body type
+[kw] - kw
+[hp] - hp
+[ccm] - ccm
+[typefuel] - fuel type
+[listcodeengine] - 	list codes engine(s)
+------
+samples :
+http://webservice.bovsoft.com:100/GetTypesForArticle?artid=1000025&format=xml&lang=de
+http://webservice.bovsoft.com:100/GetTypesForArticle?artid=1000025&format=json&lang=de
+http://webservice.bovsoft.com:100/GetTypesForArticle?artid=1000025&format=csv[;]&lang=de
+http://webservice.bovsoft.com:100/GetTypesForArticle?artid=1000025&format=csv[,]&lang=de
+http://webservice.bovsoft.com:100/GetTypesForArticle?artid=1000025&format=txt[tab]&lang=de
+http://webservice.bovsoft.com:100/GetTypesForArticle?artid=1000025
+=======================
+--------------------------------------------------
+
+

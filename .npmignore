@@ -1,0 +1,13 @@
+.vscode
+docs
+src
+test
+.env.sample
+.eslintignore
+.eslintrc
+.gitignore
+.nvmrc
+global.d.ts
+jest.config.js
+rollup.config.js
+tsconfig.json
