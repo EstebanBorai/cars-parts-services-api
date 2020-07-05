@@ -3,5 +3,5 @@ export interface GetAdditionalInfoArticleResponse {
 }
 
 export interface GetAdditionalInfoArticleParams {
-  artid: number;
+  artid: string;
 }

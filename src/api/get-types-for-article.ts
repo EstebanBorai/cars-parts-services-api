@@ -18,5 +18,5 @@ export interface GetTypesForArticleResponse {
 }
 
 export interface GetTypesForArticleParams {
-  artid: number;
+  artid: string;
 }

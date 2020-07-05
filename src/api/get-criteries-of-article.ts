@@ -4,5 +4,5 @@ export interface GetCriteriesOfArticleResponse {
 }
 
 export interface GetCriteriesOfArticleParams {
-  artid: number;
+  artid: string;
 }
