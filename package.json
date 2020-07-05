@@ -28,10 +28,10 @@
   },
   "homepage": "https://github.com/estebanborai/bovsoft-api#readme",
   "dependencies": {
-    "axios": "^0.19.2"
+    "got": "^11.4.0"
   },
   "devDependencies": {
-    "@types/axios": "^0.14.0",
+    "@types/got": "^9.6.11",
     "@types/jest": "^25.2.3",
     "@types/node": "^14.0.9",
     "@typescript-eslint/eslint-plugin": "^3.1.0",
