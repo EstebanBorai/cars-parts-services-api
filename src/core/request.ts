@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { BovsoftResponse, Func, Credentials, RequestOptions } from "../typings/index";
+import got from 'got';
+import type { BovsoftResponse, Func, Credentials, RequestOptions } from '../typings/index';
 
 export class Request {
   private baseapi: string;
@@ -34,18 +34,16 @@ export class Request {
     }
 
     if (this.requestOptions.isDebugging) {
-      /* eslint-disable */
-      console.log(`GET -> ${baseURL}`);
-      /* eslint-enable */
+      console.log(`GET -> ${baseURL}`); // eslint-disable-line
     }
 
-    const res = await axios.get<BovsoftResponse<T>>(baseURL);
+    const { statusCode, body } = await got.get<BovsoftResponse<T>>(baseURL);
 
-    if (res.status !== 200) {
+    if (statusCode !== 200) {
       // TODO: Improve this error
       throw new Error();
     }
 
-    return res.data;
+    return body;
   }
 }
