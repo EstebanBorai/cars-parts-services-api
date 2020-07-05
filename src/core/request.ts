@@ -1,5 +1,5 @@
 import got from 'got';
-import type { BovsoftResponse, Func, Credentials, RequestOptions } from '../typings/index';
+import { BovsoftResponse, Func, Credentials, RequestOptions, Format } from '../typings/index';
 
 export class Request {
   private baseapi: string;
@@ -38,6 +38,22 @@ export class Request {
     }
 
     const { statusCode, body } = await got.get<BovsoftResponse<T>>(baseURL);
+
+    if (body?.empty) {
+      // the API returns "true"/"false" instead of a boolean
+      // then evaluate the value comming from the API in order
+      // to normalize values
+      if (body.empty as unknown as string === 'false') {
+        body.empty = false;
+      } else {
+        body.empty = true;
+      }
+    }
+
+    if (this.requestOptions.format === Format.JSON) {
+      // parse JSON if the configuration is using Format.JSON
+      body.Data.Row = JSON.parse(body.Data.Row as unknown as string);
+    }
 
     if (statusCode !== 200) {
       // TODO: Improve this error
