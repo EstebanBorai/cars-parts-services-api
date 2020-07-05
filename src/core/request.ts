@@ -37,7 +37,12 @@ export class Request {
       console.log(`GET -> ${baseURL}`); // eslint-disable-line
     }
 
-    const { statusCode, body } = await got.get<BovsoftResponse<T>>(baseURL);
+    let { statusCode, body } = await got.get<BovsoftResponse<T>>(baseURL);
+
+    if (this.requestOptions.format === Format.JSON) {
+      // parse JSON if the configuration is using Format.JSON
+      body = JSON.parse(body as unknown as string);
+    }
 
     if (body?.empty) {
       // the API returns "true"/"false" instead of a boolean
@@ -48,11 +53,6 @@ export class Request {
       } else {
         body.empty = true;
       }
-    }
-
-    if (this.requestOptions.format === Format.JSON) {
-      // parse JSON if the configuration is using Format.JSON
-      body.Data.Row = JSON.parse(body.Data.Row as unknown as string);
     }
 
     if (statusCode !== 200) {
