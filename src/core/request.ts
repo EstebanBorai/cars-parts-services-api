@@ -41,7 +41,18 @@ export class Request {
 
     if (this.requestOptions.format === Format.JSON) {
       // parse JSON if the configuration is using Format.JSON
-      body = JSON.parse(body as unknown as string);
+      try {
+        body = JSON.parse(body as unknown as string);
+      } catch (error) {
+        // if an error occurs parsing the data
+        // attempt to clean up the data
+        if (error instanceof SyntaxError) {
+          body = JSON.parse((body as unknown as string).split('\n').filter(Boolean).join(''));
+        }
+
+        // throw the error if no handler supported
+        throw error;
+      }
     }
 
     if (body?.empty) {
