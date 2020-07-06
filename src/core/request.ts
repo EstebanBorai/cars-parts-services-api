@@ -48,10 +48,10 @@ export class Request {
         // attempt to clean up the data
         if (error instanceof SyntaxError) {
           body = JSON.parse((body as unknown as string).split('\n').filter(Boolean).join(''));
+        } else {
+          // throw the error if no handler supported
+          throw error;
         }
-
-        // throw the error if no handler supported
-        throw error;
       }
     }
 
