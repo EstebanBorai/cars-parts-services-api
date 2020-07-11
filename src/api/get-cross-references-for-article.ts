@@ -1,6 +1,10 @@
 export interface GetCrossReferencesForArticleResponse {
-  criteria_text: string;
-  criteria_value: string;
+  braid: string;
+  brand: string;
+  searchnr: string;
+  displaynr: string;
+  name: string;
+  kind: ProductKind;
 }
 
 export enum ProductKind {
@@ -11,10 +15,5 @@ export enum ProductKind {
 }
 
 export interface GetCrossReferencesForArticleParams {
-  braid: string;
-  brand: string;
-  searchnr: string;
-  displaynr: string;
-  name: string;
-  kind: ProductKind;
+  artid: string;
 }
