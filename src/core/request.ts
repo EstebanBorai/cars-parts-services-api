@@ -1,5 +1,6 @@
-import got from 'got';
-import { BovsoftResponse, Func, Credentials, RequestOptions, Format } from '../typings/index';
+import ky from 'ky-universal';
+
+import { BovsoftResponse, Func, Credentials, RequestOptions } from '../typings/index';
 
 export class Request {
   private baseapi: string;
@@ -12,8 +13,24 @@ export class Request {
     this.requestOptions = requestOptions;
   }
 
+  public static makeWithNoCredentials(baseapi: string, requestOptions: RequestOptions) {
+    return new Request(baseapi, {
+      email: '',
+      seccode: ''
+    }, {
+      ...requestOptions,
+      noCredentials: true
+    });
+  }
+
   public static makeURL(baseapi: string, func: Func, requestOptions: RequestOptions, creds: Credentials): string {
-    return `${baseapi}/${func}?format=${requestOptions.format}&lang=${requestOptions.lang}&email=${creds.email}&seccode=${creds.seccode}`;
+    const base = `${baseapi}/${func}?format=${requestOptions.format}&lang=${requestOptions.lang}`;
+
+    if (requestOptions.noCredentials) {
+      return base;
+    }
+
+    return base.concat(`&email=${creds.email}&seccode=${creds.seccode}`);
   }
 
   public static parseParams<P>(params?: P): string {
@@ -22,6 +39,20 @@ export class Request {
     }
 
     return '';
+  }
+
+  private async fromResult<T>(response: Response): Promise<BovsoftResponse<T>> {
+    if (response.body) {
+      const readResult = await response.body.getReader().read();
+
+      if (readResult.value) {
+        const json = new TextDecoder('utf-8').decode(readResult.value);
+
+        return JSON.parse(json) as BovsoftResponse<T>;
+      }
+    }
+
+    throw new Error(`The response object doesn't include body`);
   }
 
   public async get<T = any, P = any>(func: Func, params?: P): Promise<BovsoftResponse<T>> {
@@ -37,23 +68,9 @@ export class Request {
       console.log(`GET -> ${baseURL}`); // eslint-disable-line
     }
 
-    let { statusCode, body } = await got.get<BovsoftResponse<T>>(baseURL);
-
-    if (this.requestOptions.format === Format.JSON) {
-      // parse JSON if the configuration is using Format.JSON
-      try {
-        body = JSON.parse(body as unknown as string);
-      } catch (error) {
-        // if an error occurs parsing the data
-        // attempt to clean up the data
-        if (error instanceof SyntaxError) {
-          body = JSON.parse((body as unknown as string).split('\n').filter(Boolean).join(''));
-        } else {
-          // throw the error if no handler supported
-          throw error;
-        }
-      }
-    }
+    const response = await await ky.get(baseURL);
+    const status = response.status;
+    const body = await this.fromResult<T>(response);
 
     if (body?.empty) {
       // the API returns "true"/"false" instead of a boolean
@@ -66,9 +83,8 @@ export class Request {
       }
     }
 
-    if (statusCode !== 200) {
-      // TODO: Improve this error
-      throw new Error();
+    if (status !== 200) {
+      throw new Error(`An error occurred fetching CPS API`);
     }
 
     return body;

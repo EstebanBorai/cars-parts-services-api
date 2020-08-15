@@ -5,4 +5,5 @@ export interface RequestOptions {
   format: Format;
   lang: Lang;
   isDebugging?: boolean;
+  noCredentials?: boolean;
 }

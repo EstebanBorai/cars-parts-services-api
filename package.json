@@ -22,16 +22,16 @@
     "client"
   ],
   "author": "Esteban Borai <estebanborai@gmail.com>",
-  "license": "NO LICENSE",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/estebanborai/bovsoft-api/issues"
   },
   "homepage": "https://github.com/estebanborai/bovsoft-api#readme",
   "dependencies": {
-    "got": "^11.4.0"
+    "ky": "^0.23.0",
+    "ky-universal": "^0.8.1"
   },
   "devDependencies": {
-    "@types/got": "^9.6.11",
     "@types/jest": "^25.2.3",
     "@types/node": "^14.0.9",
     "@typescript-eslint/eslint-plugin": "^3.1.0",

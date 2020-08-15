@@ -83,7 +83,8 @@ export class Client implements IClient {
     } else {
       this.requestOptions = {
         format: Format.JSON,
-        lang: Lang.English
+        lang: Lang.English,
+        noCredentials: false,
       };
     }
 
