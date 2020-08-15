@@ -1,6 +1,6 @@
 {
   "name": "@estebanborai/cars-parts-services-api",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "Cars Parts Services API Client",
   "main": "dist/index.js",
   "publishConfig": {
