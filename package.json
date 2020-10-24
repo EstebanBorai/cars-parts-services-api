@@ -1,11 +1,8 @@
 {
-  "name": "@estebanborai/cars-parts-services-api",
-  "version": "0.2.0",
+  "name": "cars-parts-services-api",
+  "version": "0.0.1",
   "description": "Cars Parts Services API Client",
   "main": "dist/index.js",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "scripts": {
     "prepublish": "npm run build",
     "build": "rm -rf ./dist && rollup -c",
@@ -13,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/estebanborai/cars-parts-services-api.git"
+    "url": "git+https://github.com/EstebanBorai/cars-parts-services-api.git"
   },
   "keywords": [
     "bovsoft",
@@ -24,12 +21,12 @@
   "author": "Esteban Borai <estebanborai@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/estebanborai/bovsoft-api/issues"
+    "url": "https://github.com/EstebanBorai/cars-parts-services-api/issues"
   },
-  "homepage": "https://github.com/estebanborai/bovsoft-api#readme",
+  "homepage": "https://github.com/EstebanBorai/cars-parts-services-api#readme",
   "dependencies": {
-    "ky": "^0.23.0",
-    "ky-universal": "^0.8.1"
+    "ky": "^0.24.0",
+    "ky-universal": "^0.8.2"
   },
   "devDependencies": {
     "@types/jest": "^25.2.3",
