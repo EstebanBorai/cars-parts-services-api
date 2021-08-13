@@ -10,4 +10,4 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Automerge Pull Request
-        uses: EstebanBorai/automerge-dependabot-action@0.1.0
+        uses: EstebanBorai/automerge-dependabot-action@v0.1.0
